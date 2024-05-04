@@ -50,6 +50,16 @@ add_executable(main main.cpp)
 target_link_libraries(main PRIVATE cpprestsdk::cpprest)
 ```
 
+## Building on NixOS
+Use [nix-shell](https://nixos.org/manual/nix/stable/command-ref/nix-shell) on NixOS:
+```
+$ nix-shell
+$ mkdir build
+$ cd build
+$ cmake .. -GNinja -DWERROR=Off #build fails otherwise
+$ cmake --build .
+```
+
 ## What's in the SDK:
 
 *   Features - HTTP client/server, JSON, URI, asynchronous streams, WebSockets client, oAuth
